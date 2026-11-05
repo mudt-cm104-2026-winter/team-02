@@ -25,6 +25,7 @@ The entries are kept in memory: after a restart the list is empty again.
 ## Team
 <!-- One row per person: GitHub username and what you mainly take care of.
 No real names: this repository is public. -->
+This is a test change for team2.
 
 | GitHub | Role |
 |---|---|
