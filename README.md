@@ -1,8 +1,8 @@
-# Team project
+# Cybersecurity Study Resources
 
 <!-- Replace the title with your project name. -->
 
-## What this is
+## Personal library of cybersecurity learning resources. You enter the URL of website you studied from, assign it to a cybersecurity topic, and the app saves it and shows the full list of URLs grouped by topic.
 
 <!-- One or two sentences: what does your app do, and who is it for?
 Right now it is the example "Things to bring". Replace it with your topic. -->
@@ -25,12 +25,16 @@ The entries are kept in memory: after a restart the list is empty again.
 ## Team
 <!-- One row per person: GitHub username and what you mainly take care of.
 No real names: this repository is public. -->
-This is a test change for team2.
+
 
 | GitHub | Role |
 |---|---|
+| Donat Kolacnikov - dkolacnikov | python |
+| Uros Lopicic - uroslopicic | CSS |
+| Judy Ahmad -judyahmadd | HTML |
 
-## How we work
+
+## Although the work is divided into three areas, everyone helps everyone in all parts of the project. Every change goes through its own branch and pull request, and each pull request needs the approval of at least one other team member before it is merged. We start every work as an issue and follow and track it on our project board. 
 
 <!-- How your team uses Git. For example:
 - one branch per issue, named after it: `12-add-glossary`
