@@ -1,42 +1,47 @@
-"""Things to bring: the starting point of your team project.
+import json
+import os
 
-This is an example. Replace the topic with your own: change the fields,
-the texts and the page. Grow it one pull request at a time.
-
-What happens where:
-- main.py      the web part: which address shows what (the "routes")
-- storage.py   where the entries are kept
-- templates/   the HTML page
-- static/      the stylesheet
-"""
-
-from pathlib import Path
-
-from fastapi import FastAPI, Form, Request
-from fastapi.responses import RedirectResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-
-from . import storage
-
-HERE = Path(__file__).parent
-
-app = FastAPI(title="Things to bring")
-app.mount("/static", StaticFiles(directory=HERE / "static"), name="static")
-templates = Jinja2Templates(directory=HERE / "templates")
+FILE = "resources.json"
 
 
-@app.get("/")
-def show_list(request: Request):
-    """The start page: the form and all entries."""
-    return templates.TemplateResponse(
-        request, "index.html", {"entries": storage.all_entries()}
-    )
+def load():
+    if os.path.exists(FILE):
+        with open(FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
 
 
-@app.post("/add")
-def add(thing: str = Form(...), person: str = Form(...)):
-    """The form on the start page sends its fields here."""
-    storage.add_entry(thing=thing.strip(), person=person.strip())
-    # Back to the start page. 303 tells the browser: load it with GET.
-    return RedirectResponse("/", status_code=303)
+def save(resources):
+    with open(FILE, "w", encoding="utf-8") as f:
+        json.dump(resources, f, indent=2)
+
+
+def add(resources):
+    topic = input("Topic: ")
+    material = input("Material: ")
+    url = input("URL: ")
+    resources.append({"topic": topic, "material": material, "url": url})
+    save(resources)
+    print("Saved.")
+
+
+def show(resources):
+    if not resources:
+        print("No resources yet.")
+        return
+    for i, r in enumerate(resources, 1):
+        print(f"{i}. {r['topic']}")
+        print(f"   Material: {r['material']}")
+        print(f"   URL: {r['url']}")
+
+
+resources = load()
+
+print("1) Add resource  2) Show resources")
+choice = input("> ")
+if choice == "1":
+    add(resources)
+elif choice == "2":
+    show(resources)
+else:
+    print("Invalid choice.")
