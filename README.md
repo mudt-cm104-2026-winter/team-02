@@ -43,13 +43,14 @@ No real names: this repository is public. -->
 - every pull request adds a line to CHANGELOG.md
 -->
 
-## Sources
+## Sources 
+sources will be added throughout the work, if needed.
 
 <!-- One entry per source, added on the day you use it:
 - 2026-11-05: <title or link>, used for <what>
 -->
 
-## Use of AI Test
+## Use of AI 
 
 <!-- One entry per use, added on the day you use it:
 - 2026-11-05: <tool>, used for <what>, checked by <how you checked the result>
