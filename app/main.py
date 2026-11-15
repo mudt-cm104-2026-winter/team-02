@@ -22,26 +22,31 @@ def add(resources):
     url = input("URL: ")
     resources.append({"topic": topic, "material": material, "url": url})
     save(resources)
-    print("Saved.")
+    print("Saved.\n")
 
 
 def show(resources):
     if not resources:
-        print("No resources yet.")
+        print("No resources yet.\n")
         return
     for i, r in enumerate(resources, 1):
         print(f"{i}. {r['topic']}")
         print(f"   Material: {r['material']}")
         print(f"   URL: {r['url']}")
+    print()
 
 
 resources = load()
 
-print("1) Add resource  2) Show resources")
-choice = input("> ")
-if choice == "1":
-    add(resources)
-elif choice == "2":
-    show(resources)
-else:
-    print("Invalid choice.")
+while True:
+    print("1) Add resource  2) Show resources  3) Quit")
+    choice = input("> ")
+    if choice == "1":
+        add(resources)
+    elif choice == "2":
+        show(resources)
+    elif choice == "3":
+        break
+    else:
+        print("Invalid choice.\n")
+        
