@@ -49,7 +49,7 @@ No real names: this repository is public. -->
 - 2026-11-05: <title or link>, used for <what>
 -->
 
-## Use of AI
+## Use of AI Test
 
 <!-- One entry per use, added on the day you use it:
 - 2026-11-05: <tool>, used for <what>, checked by <how you checked the result>
