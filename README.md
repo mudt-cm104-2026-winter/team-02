@@ -56,3 +56,4 @@ sources will be added throughout the work, if needed.
 - 2026-11-05: <tool>, used for <what>, checked by <how you checked the result>
 "none" is a valid entry.
 -->
+2026-11-13/15: Claude, used for making and improving the python program, code checked before every run 
