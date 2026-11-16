@@ -119,36 +119,65 @@ templates = Jinja2Templates(
 
 # Display the HTML page and saved resources
 
+
+
+
 @app.get("/")
-def home(request: Request):
+def home(request: Request, category: str = ""):
     data = load()
+    entries = data["resources"]
+
+    if category:
+        entries = [
+            r for r in entries
+            if r.get("category", "Uncategorized") == category
+        ]
+
     return templates.TemplateResponse(
         request,
         "index.html",
-        {"entries": data["resources"]}
+        {
+            "entries": entries,
+            "categories": data["categories"],
+            "selected_category": category
+        }
     )
 
 
-
-# Receive new resources from the HTML form
 @app.post("/add")
 def add_web_resource(
     topic: str = Form(...),
     material: str = Form(...),
-    url: str = Form(...)
+    url: str = Form(...),
+    category: str = Form("Uncategorized")
 ):
     data = load()
+
+    if category not in data["categories"]:
+        category = "Uncategorized"
 
     data["resources"].append({
         "topic": topic,
         "material": material,
         "url": url,
-        "category": "Uncategorized"
+        "category": category
     })
 
     save(data)
+    return RedirectResponse(url="/", status_code=303)
+
+
+@app.post("/categories")
+def add_web_category(name: str = Form(...)):
+    data = load()
+    name = name.strip()
+
+    if name and name not in data["categories"]:
+        data["categories"].append(name)
+        save(data)
 
     return RedirectResponse(url="/", status_code=303)
+
 
 
 
