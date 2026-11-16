@@ -57,5 +57,9 @@ No Sources were used for doing this project.
 - 2026-11-05: <tool>, used for <what>, checked by <how you checked the result>
 "none" is a valid entry.
 -->
- 
+
+-2026-11-13/15: Claude, used for making and improving the python program, code checked before every run 
 -2026-11-15/16: Chatgpt, used for making the app's latest version of CSS and HTML file, checked by running the app in the browser
+-2026-11-16: Claude, used for making template for documentation file README.md and to correct punctuality, checked by all team members
+
+
