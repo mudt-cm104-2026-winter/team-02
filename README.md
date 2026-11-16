@@ -44,7 +44,8 @@ Although the work is divided into three areas, everyone helps everyone in all pa
 -->
 
 ## Sources 
-none
+
+No Sources were used for doing this project. 
 
 <!-- One entry per source, added on the day you use it:
 - 2026-11-05: <title or link>, used for <what>
@@ -56,3 +57,5 @@ none
 - 2026-11-05: <tool>, used for <what>, checked by <how you checked the result>
 "none" is a valid entry.
 -->
+ 
+-2026-11-15/16: Chatgpt, used for making the app's latest version of CSS and HTML file, checked by running the app in the browser
