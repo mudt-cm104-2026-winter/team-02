@@ -93,21 +93,82 @@ def browse_categories(data):
     print()
 
 
-data = load()
 
-while True:
-    print("1) Add resource  2) Show resources  3) Add category  "
-          "4) Browse categories  5) Quit")
-    choice = input("> ")
-    if choice == "1":
-        add_resource(data)
-    elif choice == "2":
-        show_resources(data)
-    elif choice == "3":
-        add_category(data)
-    elif choice == "4":
-        browse_categories(data)
-    elif choice == "5":
-        break
-    else:
-        print("Invalid choice.\n")
+
+from pathlib import Path
+from fastapi import FastAPI, Request, Form
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+
+# Web application setup
+BASE_DIR = Path(__file__).resolve().parent
+
+app = FastAPI()
+
+app.mount(
+    "/static",
+    StaticFiles(directory=str(BASE_DIR / "static")),
+    name="static"
+)
+
+templates = Jinja2Templates(
+    directory=str(BASE_DIR / "templates")
+)
+
+
+# Display the HTML page and saved resources
+
+@app.get("/")
+def home(request: Request):
+    data = load()
+    return templates.TemplateResponse(
+        request,
+        "index.html",
+        {"entries": data["resources"]}
+    )
+
+
+
+# Receive new resources from the HTML form
+@app.post("/add")
+def add_web_resource(
+    topic: str = Form(...),
+    material: str = Form(...),
+    url: str = Form(...)
+):
+    data = load()
+
+    data["resources"].append({
+        "topic": topic,
+        "material": material,
+        "url": url,
+        "category": "Uncategorized"
+    })
+
+    save(data)
+
+    return RedirectResponse(url="/", status_code=303)
+
+
+
+if __name__ == "__main__":
+    data = load()
+
+    while True:
+        print("1) Add resource  2) Show resources  3) Add category  "
+              "4) Browse categories  5) Quit")
+        choice = input("> ")
+
+        if choice == "1":
+            add_resource(data)
+        elif choice == "2":
+            show_resources(data)
+        elif choice == "3":
+            add_category(data)
+        elif choice == "4":
+            browse_categories(data)
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice.\n")
