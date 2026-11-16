@@ -29,12 +29,12 @@ No real names: this repository is public. -->
 
 | GitHub | Role |
 |---|---|
-| Donat Kolacnikov - dkolacnikov | python |
-| Uros Lopicic - uroslopicic | CSS |
-| Judy Ahmad -judyahmadd | HTML |
+| dkolacnikov | python |
+| judyahmadd | HTML and CSS |
+| urosuros25 | Documentation |
 
-
-## Although the work is divided into three areas, everyone helps everyone in all parts of the project. Every change goes through its own branch and pull request, and each pull request needs the approval of at least one other team member before it is merged. We start every work as an issue and follow and track it on our project board. 
+## How we work
+Although the work is divided into three areas, everyone helps everyone in all parts of the project. Every change goes through its own branch and pull request, and each pull request needs the approval of at least one other team member before it is merged. We start every work as an issue and follow and track it on our project board. 
 
 <!-- How your team uses Git. For example:
 - one branch per issue, named after it: `12-add-glossary`
@@ -44,7 +44,7 @@ No real names: this repository is public. -->
 -->
 
 ## Sources 
-sources will be added throughout the work, if needed.
+none
 
 <!-- One entry per source, added on the day you use it:
 - 2026-11-05: <title or link>, used for <what>
