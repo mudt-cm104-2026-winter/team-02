@@ -60,12 +60,13 @@ This is an example of this application run in Terminal. We firstly added one mat
 
 # Future Improvements
 
-- adding search by keyboard, delete and edit feature
+- adding search, delete and edit feature
+- Add a "Mark as completed" checkbox to each resource
 
 
 # Limitations
 
-- cannot check if the URL is valid
+- Categories can only be added - the interface offers an Add Category form but no option to rename or delete a category once it exists
 
 
 # Conclusion

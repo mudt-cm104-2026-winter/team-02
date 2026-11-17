@@ -2,7 +2,8 @@
 
 <!-- Replace the title with your project name. -->
 
-## Personal library of cybersecurity learning resources. You enter the URL of website you studied from, assign it to a cybersecurity topic, and the app saves it and shows the full list of URLs grouped by topic.
+## About
+Personal library of cybersecurity learning resources. You enter the URL of website you studied from, assign it to a cybersecurity topic, and the app saves it and shows the full list of URLs grouped by topic.
 
 <!-- One or two sentences: what does your app do, and who is it for?
 Right now it is the example "Things to bring". Replace it with your topic. -->
@@ -58,8 +59,8 @@ No Sources were used for doing this project.
 "none" is a valid entry.
 -->
 
--2026-11-13/15: Claude, used for making and improving the python program, code checked before every run 
--2026-11-15/16: Chatgpt, used for making the app's latest version of CSS and HTML file, checked by running the app in the browser
--2026-11-16: Claude, used for making template for documentation file README.md and to correct punctuality, checked by all team members
+- 2026-11-13/15: Claude, used for making and improving the python program, code checked before every run 
+- 2026-11-15/16: Chatgpt, used for making the app's latest version of CSS and HTML file, checked by running the app in the browser
+- 2026-11-16: Claude, used for making template for documentation file README.md and to correct punctuality, checked by all team members
 
 
