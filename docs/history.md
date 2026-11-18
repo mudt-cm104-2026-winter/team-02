@@ -15,4 +15,4 @@ Version One differs from the previous one because it includes a quit button. It 
 
 ## Version Two - The Final Version
 
-The finished product. The completed app consists of 5 options in the starting menu. In comparison with the previous version, this one features an updated resource display table and clickable links for learning resources.
+The finished product. The completed app consists of 5 options in the starting menu. In comparison with the previous version, this one features an updated resource display table, clickable links for learning resources, and categorization.
